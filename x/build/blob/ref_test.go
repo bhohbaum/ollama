@@ -26,7 +26,11 @@ var testRefs = map[string]Ref{
 	"mi tral":                {},
 	"x/y/z/foo":              {},
 	"/0":                     {},
+	"0 /0":                   {},
+	"0 /":                    {},
 	"0/":                     {},
+	":":                      {},
+	"+0/00000":               {},
 }
 
 func TestRefParts(t *testing.T) {

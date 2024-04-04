@@ -243,8 +243,8 @@ func Parts(s string) iter.Seq2[PartKind, string] {
 			case ':':
 				switch state {
 				case Build, Tag:
-					if yieldValid(Tag, s[i+1:j]) {
-						state, j = Tag, i
+					if !yieldValid(Tag, s[i+1:j]) {
+						return
 					}
 					state, j = Name, i
 				default:
